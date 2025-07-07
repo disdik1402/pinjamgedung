@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peminjaman Gedung - Dispendikbud Pasuruan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Sistem Peminjaman Gedung</h1>
+            <p>Dinas Pendidikan Kabupaten Pasuruan</p>
+        </header>
+
+        <main class="main-content">
+            <div class="glass-container calendar-view">
+                <h2>Pilih Gedung & Lihat Jadwal</h2>
+                <div class="gedung-selector">
+                    <button class="btn-gedung active" data-gedung="A">Gedung A</button>
+                    <button class="btn-gedung" data-gedung="B">Gedung B</button>
+                </div>
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button id="prev-month"><</button>
+                        <h3 id="month-year"></h3>
+                        <button id="next-month">></button>
+                    </div>
+                    <div class="calendar-days"></div>
+                </div>
+                <div class="legend">
+                    <div><span class="dot available"></span> Tersedia</div>
+                    <div><span class="dot booked"></span> Dipesan</div>
+                </div>
+            </div>
+
+            <div class="glass-container form-view hidden">
+                <h2>Formulir Peminjaman</h2>
+                <form id="booking-form">
+                    <input type="hidden" id="selected-date" name="selected-date">
+                    <input type="hidden" id="selected-gedung" name="selected-gedung">
+                    
+                    <div class="form-group">
+                        <label for="nama-lembaga">Nama Lembaga/Instansi</label>
+                        <input type="text" id="nama-lembaga" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="penanggung-jawab">Nama Penanggung Jawab</label>
+                        <input type="text" id="penanggung-jawab" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telepon">Nomor Telepon/WA</label>
+                        <input type="tel" id="telepon" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Alamat Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jam-mulai">Jam Mulai</label>
+                        <input type="time" id="jam-mulai" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jam-selesai">Jam Selesai</label>
+                        <input type="time" id="jam-selesai" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="keperluan">Tujuan/Keperluan</label>
+                        <textarea id="keperluan" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="surat-permohonan">Upload Surat Permohonan (PDF, Opsional)</label>
+                        <input type="file" id="surat-permohonan" accept=".pdf">
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" id="back-to-calendar" class="btn">Kembali</button>
+                        <button type="submit" class="btn">Ajukan</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="glass-container confirmation-view hidden">
+                <h2>Pengajuan Terkirim</h2>
+                <p>Pengajuan Anda telah berhasil dikirim dan sedang menunggu persetujuan Admin.</p>
+                <p>Anda akan menerima notifikasi melalui email jika status permohonan sudah diperbarui.</p>
+                <button id="new-booking" class="btn">Buat Pengajuan Baru</button>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Dinas Pendidikan Kabupaten Pasuruan</p>
+            <p>Komplek Perkantoran Pemerintah Kabupaten Pasuruan, Jln. Raya Raci Km.09, Bangil</p>
+            <p>Telp: (0343) 5615545 | Email: dispendikbud@pasuruankab.go.id</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
